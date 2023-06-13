@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WSCoffeeShop.Models;
 
@@ -21,7 +22,14 @@ public partial class Product
 
     public int BrandId { get; set; }
 
-    public virtual Brand Brand { get; set; } = null!;
+    [ForeignKey("BrandId")]
+    public virtual Brand Brand { get; set; }
 
-    public virtual Category Category { get; set; } = null!;
+    //public virtual Category Category { get; set; } = null!; 
+    [ForeignKey("CategoryId")]
+    public Category Category { get; set; } 
+
+
+
+    //public virtual Category Category { get; set; }
 }

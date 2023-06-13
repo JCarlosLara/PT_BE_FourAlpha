@@ -54,8 +54,8 @@ public partial class CrudcoffeeshopContext : DbContext
         });
 
         modelBuilder.Entity<Product>(entity =>
-        {
-            entity.HasNoKey();
+        { 
+            entity.HasKey(e => e.Id).HasName("PK__Products__3213E83F04B9FBAC");
 
             entity.Property(e => e.Active).HasColumnName("active");
             entity.Property(e => e.BrandId).HasColumnName("brandId");
